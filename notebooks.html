@@ -395,63 +395,21 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
-<h1>Data UNderstanding</h1>
+<h1>Data Understanding</h1>
 <p>Data Understanding adalah tahap awal dalam proses Data Science atau Data Mining yang fokus pada pemahaman data yang tersedia sebelum dilakukan analisis atau pemodelan. Tujuannya adalah untuk mengenal karakteristik data, kualitas data, dan informasi penting yang terkandung di dalamnya.
 
-Secara lebih rinci, data understanding meliputi beberapa aktivitas utama: <br>
+Secara lebih rinci, data understanding meliputi beberapa aktivitas utama: </p>
 
-Pengumpulan Data (Data Collection): Mengumpulkan data dari berbagai sumber, baik internal maupun eksternal, yang relevan dengan tujuan analisis.<br>
+<p>1.Pengumpulan Data (Data Collection): Mengumpulkan data dari berbagai sumber, baik internal maupun eksternal, yang relevan dengan tujuan analisis.</p>
 
-Deskripsi Data (Data Description): Menjelaskan struktur data, jenis variabel (numerik, kategorik, ordinal, dll.), jumlah entri, dan ukuran dataset.<br>
+<p>2.Deskripsi Data (Data Description): Menjelaskan struktur data, jenis variabel (numerik, kategorik, ordinal, dll.), jumlah entri, dan ukuran dataset.</p>
 
-Eksplorasi Data (Data Exploration): Melakukan analisis awal untuk mengenali pola, tren, distribusi, dan keterkaitan antar variabel. Biasanya menggunakan visualisasi seperti grafik atau tabel statistik.<br>
+<p>3.Eksplorasi Data (Data Exploration): Melakukan analisis awal untuk mengenali pola, tren, distribusi, dan keterkaitan antar variabel. Biasanya menggunakan visualisasi seperti grafik atau tabel statistik.</p>
 
-Evaluasi Kualitas Data (Data Quality Assessment): Menilai apakah data memiliki missing values, outlier, duplikasi, atau inkonsistensi yang perlu diperbaiki sebelum analisis lebih lanjut..</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7f65a7bfcfe0&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+<p>4.Evaluasi Kualitas Data (Data Quality Assessment): Menilai apakah data memiliki missing values, outlier, duplikasi, atau inkonsistensi yang perlu diperbaiki sebelum analisis lebih lanjut..</p>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
-
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/296a7adda50947ec512bb802f2a805de61ab50016fac4496910d5dd151b10b9e.png" src="_images/296a7adda50947ec512bb802f2a805de61ab50016fac4496910d5dd151b10b9e.png" />
-</div>
-</div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
-</section>
+  <h1>Kesimpulan</h1>
+    <p>Berdasarkan proses data understanding, dapat disimpulkan bahwa pemahaman awal terhadap dataset sangat penting untuk mengetahui karakteristik, kualitas, dan keterbatasan data sebelum melakukan analisis lebih lanjut. Tahap ini meliputi identifikasi jenis data (numerik, kategorikal, teks), pemeriksaan nilai hilang, pengecekan distribusi data, serta penemuan pola atau outlier yang signifikan. Dengan pemahaman ini, kita dapat menentukan langkah pra-pemrosesan yang tepat, seperti normalisasi, imputasi, atau encoding, sehingga analisis berikutnya dapat berjalan akurat dan efisien. Secara keseluruhan, data understanding membantu memastikan bahwa data yang digunakan relevan, bersih, dan siap untuk tahap modeling atau pengambilan keputusan.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,7 +448,7 @@ with your book. For more information about this, see <a class="reference externa
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Memahami Bisnis</p>
       </div>
     </a>
     <a class="right-next"
@@ -498,7 +456,7 @@ with your book. For more information about this, see <a class="reference externa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">Eksplorasi Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -518,9 +476,7 @@ with your book. For more information about this, see <a class="reference externa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Kesimpulan</a></li>
 </ul>
   </nav></div>
 
@@ -535,7 +491,7 @@ with your book. For more information about this, see <a class="reference externa
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Angger23-155
 </p>
 
   </div>
