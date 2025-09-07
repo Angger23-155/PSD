@@ -394,15 +394,38 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Bussines Understanding</h1>
-    <p> Business Understanding adalah tahap awal dalam proses analisis data atau Data Mining/Analytics, di mana fokusnya adalah memahami konteks bisnis dan tujuan proyek secara menyeluruh sebelum masuk ke data itu sendiri.</p>
-    <p>Tujuan dari Business Understanding antara lain:</p>
-    <p>1.Menetapkan tujuan proyek: Mengetahui apa yang ingin dicapai oleh bisnis, misalnya meningkatkan penjualan, mengurangi churn pelanggan, atau mendeteksi fraud.</p>
-    <p>2.Memahami masalah bisnis: Menentukan pertanyaan atau masalah spesifik yang akan dijawab dengan data.</p>
-    <p>3.Mendefinisikan kesuksesan: Menentukan bagaimana hasil analisis akan diukur, misalnya peningkatan persentase penjualan, akurasi prediksi, atau efisiensi proses.</p>
-    <p>4.Merencanakan strategi analisis: Memutuskan langkah awal yang tepat, seperti jenis data yang diperlukan dan teknik analisis yang akan digunakan.</p>
-    <h1>Kesimpulan</h1>
-    <p>Tahap Business Understanding penting untuk memastikan seluruh proses analisis data selaras dengan tujuan bisnis. Pada tahap ini, kita mengidentifikasi masalah yang ingin diselesaikan, menetapkan tujuan proyek, dan menentukan indikator kesuksesan yang jelas. Dengan pemahaman bisnis yang baik, langkah-langkah selanjutnya, termasuk pengumpulan dan analisis data, dapat dilakukan secara tepat dan efektif. Secara keseluruhan, Business Understanding menjadi fondasi agar hasil analisis data relevan dan memberikan nilai nyata bagi bisnis atau organisasi.</p>
+ <h1>Data Understanding - Stroke Prediction Dataset</h1>
+
+    <h2>1. Sumber Data</h2>
+    <p>Dataset eksternal dari Kaggle: <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank">Stroke Prediction Dataset</a></p>
+
+    <h2>2. Tipe Data</h2>
+    <table>
+        <tr><th>Kolom</th><th>Tipe Data</th><th>Keterangan</th></tr>
+        <tr><td>id</td><td>Integer</td><td>ID pasien</td></tr>
+        <tr><td>gender</td><td>Kategori</td><td>Male / Female / Other</td></tr>
+        <tr><td>age</td><td>Numerik</td><td>Umur dalam tahun</td></tr>
+        <tr><td>hypertension</td><td>Integer</td><td>0/1</td></tr>
+        <tr><td>heart_disease</td><td>Integer</td><td>0/1</td></tr>
+        <tr><td>ever_married</td><td>Kategori</td><td>Yes / No</td></tr>
+        <tr><td>work_type</td><td>Kategori</td><td>Jenis pekerjaan</td></tr>
+        <tr><td>residence_type</td><td>Kategori</td><td>Urban / Rural</td></tr>
+        <tr><td>avg_glucose_level</td><td>Numerik</td><td>Level glukosa</td></tr>
+        <tr><td>bmi</td><td>Numerik</td><td>Body Mass Index</td></tr>
+        <tr><td>smoking_status</td><td>Kategori</td><td>Former / Never / Smokes / Unknown</td></tr>
+        <tr><td>stroke</td><td>Integer</td><td>0 = Tidak, 1 = Ya</td></tr>
+    </table>
+
+    <h2>3. Kualitas Data</h2>
+    <ul>
+        <li>Missing Values: <strong>bmi</strong> dan <strong>smoking_status</strong> memiliki data kosong.</li>
+        <li>Outliers: <strong>age, avg_glucose_level, bmi</strong> memiliki nilai ekstrem.</li>
+        <li>Konsistensi Data: pastikan kolom kategori hanya memiliki nilai valid.</li>
+    </ul>
+
+    <h2>4. Visualisasi</h2>
+    <p>Tambahkan grafik distribusi umur, BMI, glukosa, dan missing values di sini.</p>
+
 </section>
 
     <script type="text/x-thebe-config">
