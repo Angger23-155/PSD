@@ -392,7 +392,68 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Eksplorasi Data</h1>
+<main id="main-content" class="bd-main" role="main">
+    <div class="bd-content">
+      <article class="bd-article">
+
+        <h1>Eksplorasi Data</h1>
+        <p>Halaman ini berisi dokumentasi eksplorasi dataset <code>healthcare-dataset-stroke-data.csv</code> menggunakan Python. 
+        Hasil visualisasi ditampilkan dalam bentuk gambar yang berasal dari output Google Colab.</p>
+
+        <!-- Bagian 1: Import Library -->
+        <h2>1. Import Library</h2>
+        <pre><code class="language-python">
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set(style="whitegrid")
+        </code></pre>
+        <img src="img/import_library.png" alt="Import Library" width="600">
+
+        <!-- Bagian 2: Load Dataset -->
+        <h2>2. Load Dataset</h2>
+        <pre><code class="language-python">
+from google.colab import drive
+drive.mount('/content/drive')
+
+df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/healthcare-dataset-stroke-data.csv')
+df.head()
+        </code></pre>
+        <img src="img/load_dataset.png" alt="Load Dataset" width="600">
+
+        <!-- Bagian 3: Info Dataset -->
+        <h2>3. Informasi Dataset</h2>
+        <pre><code class="language-python">
+df.info()
+        </code></pre>
+        <img src="img/info_dataset.png" alt="Info Dataset" width="600">
+
+        <!-- Bagian 4: Statistik Deskriptif -->
+        <h2>4. Statistik Deskriptif</h2>
+        <pre><code class="language-python">
+df.describe()
+        </code></pre>
+        <img src="img/describe_dataset.png" alt="Statistik Deskriptif" width="600">
+
+        <!-- Bagian 5: Visualisasi Data -->
+        <h2>5. Visualisasi Data</h2>
+        <pre><code class="language-python">
+plt.figure(figsize=(6,4))
+sns.countplot(x="stroke", data=df, palette="Set2")
+plt.title("Distribusi Kelas Stroke")
+plt.show()
+        </code></pre>
+        <img src="img/visualisasi_stroke.png" alt="Distribusi Stroke" width="600">
+
+        <h2>Kesimpulan</h2>
+        <p>Eksplorasi data membantu memahami struktur, kualitas, dan pola awal pada dataset sebelum dilakukan pemodelan machine learning.</p>
+
+      </article>
+    </div>
+  </main>
+
+    
 
     <script type="text/x-thebe-config">
     {
