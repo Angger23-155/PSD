@@ -407,9 +407,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# setting default style
 sns.set(style="whitegrid")
         </code></pre>
-        <img src="img/import_library.png" alt="Import Library" width="600">
+        <pre> Import library yang akan digunakan kalau belun install,install dulu</pre>
 
         <!-- Bagian 2: Load Dataset -->
         <h2>2. Load Dataset</h2>
@@ -417,35 +418,47 @@ sns.set(style="whitegrid")
 from google.colab import drive
 drive.mount('/content/drive')
 
+# ganti path sesuai lokasi file di Google Drive
+df = pd.read_csv("/content/drive/MyDrive/psd/healthcare-dataset-stroke-data.csv")
+df.head()
+
 df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/healthcare-dataset-stroke-data.csv')
 df.head()
         </code></pre>
-        <img src="img/load_dataset.png" alt="Load Dataset" width="600">
+        <img src="_static/loaddata.png" alt="Load Dataset" width="600">
 
         <!-- Bagian 3: Info Dataset -->
         <h2>3. Informasi Dataset</h2>
         <pre><code class="language-python">
+print("Jumlah baris dan kolom:", df.shape)
 df.info()
-        </code></pre>
-        <img src="img/info_dataset.png" alt="Info Dataset" width="600">
-
-        <!-- Bagian 4: Statistik Deskriptif -->
-        <h2>4. Statistik Deskriptif</h2>
-        <pre><code class="language-python">
 df.describe()
         </code></pre>
-        <img src="img/describe_dataset.png" alt="Statistik Deskriptif" width="600">
+        <img src="_static/informasi_data.png" alt="Info Dataset" width="600">
+
+        <pre>
+          <h2>KETERANGAN</h2>
+          df.shape menunjukkan jumlah baris dan kolom dataset.  
+          df.info() memberi tahu tipe data tiap kolom dan apakah ada nilai kosong.  
+          df.describe() menampilkan ringkasan statistik untuk kolom numerik.  
+        </pre>
+
 
         <!-- Bagian 5: Visualisasi Data -->
-        <h2>5. Visualisasi Data</h2>
+        <h2>4. Visualisasi Data</h2>
         <pre><code class="language-python">
 plt.figure(figsize=(6,4))
 sns.countplot(x="stroke", data=df, palette="Set2")
 plt.title("Distribusi Kelas Stroke")
 plt.show()
         </code></pre>
-        <img src="img/visualisasi_stroke.png" alt="Distribusi Stroke" width="600">
-
+        <img src="_static/visualisasi_data.png" alt="Distribusi Stroke" width="600">
+        
+         <pre>
+          <h2>KETERANGAN</h2>
+         Histogram menunjukkan sebaran usia pasien. Risiko stroke cenderung meningkat pada usia lanjut (>60 tahun).   
+        </pre>
+        
         <h2>Kesimpulan</h2>
         <p>Eksplorasi data membantu memahami struktur, kualitas, dan pola awal pada dataset sebelum dilakukan pemodelan machine learning.</p>
 
