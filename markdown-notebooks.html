@@ -459,6 +459,32 @@ plt.show()
          <h2>Buat database di postgre SQL untuk menyimpan dataset</h2>
         <img src="_static/postgre.png" alt="Distribusi Stroke" width="600">
         <h2>Get data dari postgre SQL di Power BI menggunakan Skrip Python</h2>
+        <pre>import pandas as pd
+from sqlalchemy import create_engine
+import numpy as np
+
+# Koneksi PostgreSQL
+user = "postgres"
+password = "postgres"
+host = "localhost"
+port = "5432"
+database = "proyek_sainsdata"
+
+engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}")
+
+# Query ambil data
+query = "SELECT * FROM stroke_data"
+
+# Baca ke DataFrame
+df = pd.read_sql(query, engine)
+
+# Perbaikan encoding & nilai aneh
+df.replace('N/A', np.nan, inplace=True)   # ganti 'N/A' jadi NaN
+df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)  # buang spasi aneh
+df = df.astype(str).apply(lambda col: col.str.encode('utf-8', 'ignore').str.decode('utf-8'))  # pastikan UTF-8
+
+# Hasil ke Power BI
+dataset = df</pre>
         <img src="_static/getdata.png" alt="Distribusi Stroke" width="600">
         <h2>pilih tabel data anda</h2>
         <img src="_static/tabeldata.png" alt="Distribusi Stroke" width="600">
