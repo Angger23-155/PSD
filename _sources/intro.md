@@ -1,11 +1,7 @@
-# Welcome to your Jupyter Book
-
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+# Welcome To My Proyek Sains Data
+    "Assalamu’alaikum warahmatullahi wabarakatuh"
+Perkenalkan, nama saya Angger Maulana Effendi, dengan NIM 230411100155 dari Program Studi Teknik Informatika, Universitas Trunojoyo Madura.
+Untuk keperluan komunikasi lebih lanjut, saya dapat dihubungi melalui email di anggerramadhan073@gmail.com
 
 ```{tableofcontents}
 ```
