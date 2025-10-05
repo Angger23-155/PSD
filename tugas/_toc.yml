@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Bussines_Understanding.ipynb
+- file: Data_Understanding.ipynb
+- file: eksplorasi_data.ipynb
+- file: Oversampling.ipynb
+- file: Ensemble_Learning.ipynb
