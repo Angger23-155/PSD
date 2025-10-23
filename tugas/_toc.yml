@@ -9,3 +9,11 @@ chapters:
 - file: eksplorasi_data.ipynb
 - file: Oversampling.ipynb
 - file: Ensemble_Learning.ipynb
+- part: Time Series
+    chapters:
+      - file: Crawling Data NO2
+        title: Data Crawling NO2
+      - file: Preprocessing
+        title: Preprocessing
+      - file: KNN Regression
+        title: KNN Regression
