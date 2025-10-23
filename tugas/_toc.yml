@@ -4,16 +4,20 @@
 format: jb-book
 root: intro
 chapters:
-- file: Bussines_Understanding.ipynb
-- file: Data_Understanding.ipynb
-- file: eksplorasi_data.ipynb
-- file: Oversampling.ipynb
-- file: Ensemble_Learning.ipynb
+
+# File-file di navigasi utama
+- file: Bussines_Understanding
+- file: Data_Understanding
+- file: eksplorasi_data
+- file: Over-Sampling
+- file: Ensemble_Learning
+
+# Bagian "Time Series" untuk tugas-tugas Anda
 - part: Time Series
-    chapters:
-      - file: Crawling Data NO2
-        title: Data Crawling NO2
-      - file: Preprocessing
-        title: Preprocessing
-      - file: KNN Regression
-        title: KNN Regression
+  chapters:
+  - file: tugas/Crawling Data NO2
+    title: Data Crawling NO2
+  - file: tugas/Preprocessing
+    title: Preprocessing
+  - file: tugas/KNN Regression
+    title: KNN Regression
