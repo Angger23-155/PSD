@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>**Preprocessing Data NO₂ di Kwanyar, Bangkalan ** &#8212; Proyek Sains Data</title>
+    <title>PREPROCESSING &#8212; Proyek Sains Data</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Preprocessing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="** Import Library **" href="KNN%20Regression.html" />
-    <link rel="prev" title="**Crawling Data Konsentrasi NO₂ di Kwanyar **" href="Crawling%20Data%20NO2.html" />
+    <link rel="next" title="KNN REGRESSION" href="KNN%20Regression.html" />
+    <link rel="prev" title="CRAWLING DATA" href="Crawling%20Data%20NO2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,20 +191,23 @@
 
 
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Time%20Series.html">**Time Series **</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Crawling%20Data%20NO2.html">**Crawling Data Konsentrasi NO₂ di Kwanyar **</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Time%20Series.html"><strong>Time Series</strong></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Crawling%20Data%20NO2.html"><strong>CRAWLING DATA</strong></a></li>
 
 
 
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><strong>PREPROCESSING</strong></a></li>
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="KNN%20Regression.html">** Import Library **</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="KNN%20Regression.html"><strong>KNN REGRESSION</strong></a></li>
+
 
 
 
@@ -399,7 +402,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</h1>
+    <h1>PREPROCESSING</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,12 +412,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-load-datset">**Import Library Dan Load Datset **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">**Handling Missing Values **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-supervised-data-dengan-lag-features">**Pembuatan Supervised Data dengan Lag Features **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-dataset-hasil-preprocessing">**Simpan Dataset Hasil Preprocessing **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-pola-no2-dan-lag-nya">**Visualisasi Pola NO₂ dan Lag-nya **</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>PREPROCESSING</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data-no2-di-kwanyar-bangkalan"><strong>Preprocessing Data NO₂ di Kwanyar, Bangkalan</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-load-datset"><strong>Import Library Dan Load Datset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values"><strong>Handling Missing Values</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-supervised-data-dengan-lag-features"><strong>Pembuatan Supervised Data dengan Lag Features</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-dataset-hasil-preprocessing"><strong>Simpan Dataset Hasil Preprocessing</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-pola-no2-dan-lag-nya"><strong>Visualisasi Pola NO₂ dan Lag-nya</strong></a></li>
 </ul>
 
             </nav>
@@ -427,8 +431,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data-no2-di-kwanyar-bangkalan">
-<h1>**Preprocessing Data NO₂ di Kwanyar, Bangkalan **<a class="headerlink" href="#preprocessing-data-no2-di-kwanyar-bangkalan" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="preprocessing">
+<h1><strong>PREPROCESSING</strong><a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data-no2-di-kwanyar-bangkalan">
+<h1><strong>Preprocessing Data NO₂ di Kwanyar, Bangkalan</strong><a class="headerlink" href="#preprocessing-data-no2-di-kwanyar-bangkalan" title="Link to this heading">#</a></h1>
 <p>Notebook ini berisi tahapan preprocessing data hasil crawling konsentrasi gas NO₂ di wilayah Kwanyar, Bangkalan, Jawa Timur, sebelum dilakukan pemodelan menggunakan KNN Regression.</p>
 <p>Dataset yang digunakan berasal dari hasil pengambilan data satelit melalui openEO API dan telah disimpan dalam format .csv dengan kolom:</p>
 <ul class="simple">
@@ -444,7 +451,7 @@ document.write(`
 </ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="import-library-dan-load-datset">
-<h1>**Import Library Dan Load Datset **<a class="headerlink" href="#import-library-dan-load-datset" title="Link to this heading">#</a></h1>
+<h1><strong>Import Library Dan Load Datset</strong><a class="headerlink" href="#import-library-dan-load-datset" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 1. Import Library ---</span>
@@ -538,7 +545,7 @@ None
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="handling-missing-values">
-<h1>**Handling Missing Values **<a class="headerlink" href="#handling-missing-values" title="Link to this heading">#</a></h1>
+<h1><strong>Handling Missing Values</strong><a class="headerlink" href="#handling-missing-values" title="Link to this heading">#</a></h1>
 <p>Jika terdapat nilai NO₂ yang kosong, maka akan diisi menggunakan interpolasi linear, karena data bersifat deret waktu (time series).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -589,7 +596,7 @@ dtype: int64
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="pembuatan-supervised-data-dengan-lag-features">
-<h1>**Pembuatan Supervised Data dengan Lag Features **<a class="headerlink" href="#pembuatan-supervised-data-dengan-lag-features" title="Link to this heading">#</a></h1>
+<h1><strong>Pembuatan Supervised Data dengan Lag Features</strong><a class="headerlink" href="#pembuatan-supervised-data-dengan-lag-features" title="Link to this heading">#</a></h1>
 <p>Agar data time series dapat digunakan untuk prediksi, kita perlu mengubahnya menjadi bentuk supervised learning, yaitu dengan menambahkan fitur lag (nilai NO₂ pada hari-hari sebelumnya).</p>
 <p>3 lag features:</p>
 <p>NO2_t-1 → NO₂ satu hari sebelumnya</p>
@@ -685,7 +692,7 @@ dtype: int64
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simpan-dataset-hasil-preprocessing">
-<h1>**Simpan Dataset Hasil Preprocessing **<a class="headerlink" href="#simpan-dataset-hasil-preprocessing" title="Link to this heading">#</a></h1>
+<h1><strong>Simpan Dataset Hasil Preprocessing</strong><a class="headerlink" href="#simpan-dataset-hasil-preprocessing" title="Link to this heading">#</a></h1>
 <p>Dataset hasil preprocessing (sudah bersih dan berbentuk supervised) disimpan untuk digunakan pada tahap pemodelan KNN Regression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,7 +714,7 @@ Kamu bisa melihat atau mengunduh file tersebut langsung di panel Explorer (folde
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="visualisasi-pola-no2-dan-lag-nya">
-<h1>**Visualisasi Pola NO₂ dan Lag-nya **<a class="headerlink" href="#visualisasi-pola-no2-dan-lag-nya" title="Link to this heading">#</a></h1>
+<h1><strong>Visualisasi Pola NO₂ dan Lag-nya</strong><a class="headerlink" href="#visualisasi-pola-no2-dan-lag-nya" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -765,7 +772,7 @@ Kamu bisa melihat atau mengunduh file tersebut langsung di panel Explorer (folde
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">**Crawling Data Konsentrasi NO₂ di Kwanyar **</p>
+        <p class="prev-next-title"><strong>CRAWLING DATA</strong></p>
       </div>
     </a>
     <a class="right-next"
@@ -773,7 +780,7 @@ Kamu bisa melihat atau mengunduh file tersebut langsung di panel Explorer (folde
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">** Import Library **</p>
+        <p class="prev-next-title"><strong>KNN REGRESSION</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -793,12 +800,13 @@ Kamu bisa melihat atau mengunduh file tersebut langsung di panel Explorer (folde
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-load-datset">**Import Library Dan Load Datset **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">**Handling Missing Values **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-supervised-data-dengan-lag-features">**Pembuatan Supervised Data dengan Lag Features **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-dataset-hasil-preprocessing">**Simpan Dataset Hasil Preprocessing **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-pola-no2-dan-lag-nya">**Visualisasi Pola NO₂ dan Lag-nya **</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>PREPROCESSING</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data-no2-di-kwanyar-bangkalan"><strong>Preprocessing Data NO₂ di Kwanyar, Bangkalan</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-load-datset"><strong>Import Library Dan Load Datset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values"><strong>Handling Missing Values</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-supervised-data-dengan-lag-features"><strong>Pembuatan Supervised Data dengan Lag Features</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simpan-dataset-hasil-preprocessing"><strong>Simpan Dataset Hasil Preprocessing</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-pola-no2-dan-lag-nya"><strong>Visualisasi Pola NO₂ dan Lag-nya</strong></a></li>
 </ul>
 
   </nav></div>

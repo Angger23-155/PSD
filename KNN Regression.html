@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>** Import Library ** &#8212; Proyek Sains Data</title>
+    <title>KNN REGRESSION &#8212; Proyek Sains Data</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'KNN Regression';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="**Preprocessing Data NO₂ di Kwanyar, Bangkalan **" href="Preprocessing.html" />
+    <link rel="prev" title="PREPROCESSING" href="Preprocessing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,20 +190,23 @@
 
 
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Time%20Series.html">**Time Series **</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Crawling%20Data%20NO2.html">**Crawling Data Konsentrasi NO₂ di Kwanyar **</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Time%20Series.html"><strong>Time Series</strong></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Crawling%20Data%20NO2.html"><strong>CRAWLING DATA</strong></a></li>
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="Preprocessing.html">**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Preprocessing.html"><strong>PREPROCESSING</strong></a></li>
 
 
 
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">** Import Library **</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><strong>KNN REGRESSION</strong></a></li>
+
 
 
 
@@ -398,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>** Import Library **</h1>
+    <h1>KNN REGRESSION</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,14 +411,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">** Import Library **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">** Load Dataset **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pisahkan-fitur-x-dan-target-y">** Pisahkan Fitur (X) dan Target (y)**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">** Normalisasi Data**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">** Split Data**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model">** Pelatihan Model**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-performa">** Evaluasi Performa**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">** Visualisasi**</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>KNN REGRESSION</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>Import Library</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset"><strong>Load Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pisahkan-fitur-x-dan-target-y"><strong>Pisahkan Fitur (X) dan Target (y)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data"><strong>Normalisasi Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model"><strong>Pelatihan Model</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-performa"><strong>Evaluasi Performa</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi"><strong>Visualisasi</strong></a></li>
 </ul>
 
             </nav>
@@ -428,8 +432,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="import-library">
-<h1>** Import Library **<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="knn-regression">
+<h1><strong>KNN REGRESSION</strong><a class="headerlink" href="#knn-regression" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="import-library">
+<h1><strong>Import Library</strong><a class="headerlink" href="#import-library" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library yang dibutuhkan</span>
@@ -446,7 +453,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="load-dataset">
-<h1>** Load Dataset **<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h1>
+<h1><strong>Load Dataset</strong><a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pastikan file CSV hasil preprocessing sudah diunggah</span>
@@ -530,7 +537,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="pisahkan-fitur-x-dan-target-y">
-<h1>** Pisahkan Fitur (X) dan Target (y)**<a class="headerlink" href="#pisahkan-fitur-x-dan-target-y" title="Link to this heading">#</a></h1>
+<h1><strong>Pisahkan Fitur (X) dan Target (y)</strong><a class="headerlink" href="#pisahkan-fitur-x-dan-target-y" title="Link to this heading">#</a></h1>
 <p>Pada supervised data hasil preprocessing, biasanya kita punya kolom seperti NO2(t-1) dan target NO2(t).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +550,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="normalisasi-data">
-<h1>** Normalisasi Data**<a class="headerlink" href="#normalisasi-data" title="Link to this heading">#</a></h1>
+<h1><strong>Normalisasi Data</strong><a class="headerlink" href="#normalisasi-data" title="Link to this heading">#</a></h1>
 <p>KNN sangat sensitif terhadap skala data, karena menghitung jarak antar titik (biasanya Euclidean).
 Oleh karena itu, semua fitur dinormalisasi dengan MinMaxScaler ke rentang [0, 1].</p>
 <div class="cell docutils container">
@@ -560,7 +567,7 @@ Oleh karena itu, semua fitur dinormalisasi dengan MinMaxScaler ke rentang [0, 1]
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="split-data">
-<h1>** Split Data**<a class="headerlink" href="#split-data" title="Link to this heading">#</a></h1>
+<h1><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h1>
 <p>Data dibagi menjadi:</p>
 <p>80% untuk pelatihan (X_train, y_train)</p>
 <p>20% untuk pengujian (X_test, y_test)
@@ -577,7 +584,7 @@ Karena ini data deret waktu (time series), shuffle=False digunakan agar urutan w
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="pelatihan-model">
-<h1>** Pelatihan Model**<a class="headerlink" href="#pelatihan-model" title="Link to this heading">#</a></h1>
+<h1><strong>Pelatihan Model</strong><a class="headerlink" href="#pelatihan-model" title="Link to this heading">#</a></h1>
 <p>Model KNN Regression dilatih dengan n_neighbors=3, artinya prediksi dibuat berdasarkan rata-rata dari 3 titik data terdekat.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,7 +1208,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="evaluasi-performa">
-<h1>** Evaluasi Performa**<a class="headerlink" href="#evaluasi-performa" title="Link to this heading">#</a></h1>
+<h1><strong>Evaluasi Performa</strong><a class="headerlink" href="#evaluasi-performa" title="Link to this heading">#</a></h1>
 <p>Beberapa metrik digunakan:</p>
 <p>MAE (Mean Absolute Error) → rata-rata selisih absolut antara aktual dan prediksi.</p>
 <p>RMSE (Root Mean Squared Error) → penalti lebih besar untuk kesalahan besar.</p>
@@ -1216,7 +1223,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="visualisasi">
-<h1>** Visualisasi**<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h1>
+<h1><strong>Visualisasi</strong><a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h1>
 <p>Grafik menampilkan perbandingan antara data aktual dan hasil prediksi.
 Semakin berdekatan garis biru (aktual) dan merah (prediksi), semakin akurat model KNN.</p>
 <div class="cell docutils container">
@@ -1293,7 +1300,7 @@ R² Score: -0.101100
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">**Preprocessing Data NO₂ di Kwanyar, Bangkalan **</p>
+        <p class="prev-next-title"><strong>PREPROCESSING</strong></p>
       </div>
     </a>
 </div>
@@ -1312,14 +1319,15 @@ R² Score: -0.101100
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">** Import Library **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">** Load Dataset **</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pisahkan-fitur-x-dan-target-y">** Pisahkan Fitur (X) dan Target (y)**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">** Normalisasi Data**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">** Split Data**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model">** Pelatihan Model**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-performa">** Evaluasi Performa**</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">** Visualisasi**</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>KNN REGRESSION</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>Import Library</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset"><strong>Load Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pisahkan-fitur-x-dan-target-y"><strong>Pisahkan Fitur (X) dan Target (y)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data"><strong>Normalisasi Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model"><strong>Pelatihan Model</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-performa"><strong>Evaluasi Performa</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi"><strong>Visualisasi</strong></a></li>
 </ul>
 
   </nav></div>
