@@ -18,3 +18,7 @@ chapters:
     - file: Crawling Data NO2
     - file: Preprocessing
     - file: KNN Regression
+    - file: Revisi
+      sections:
+        - file: Autocorelation_Lag30
+        - file: KNN Regression(Revisi)
