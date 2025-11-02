@@ -445,7 +445,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>VOICE DETECTION</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proyek">🧩 Tahapan Proyek</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proyek">Tahapan Proyek</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>IMPORT LIBRARY</strong></a></li>
@@ -475,7 +475,7 @@ document.write(`
 Dataset terdiri dari 100 file audio <code class="docutils literal notranslate"><span class="pre">.wav</span></code> untuk masing-masing kelas.</p>
 <hr class="docutils" />
 <section id="tahapan-proyek">
-<h2>🧩 Tahapan Proyek<a class="headerlink" href="#tahapan-proyek" title="Link to this heading">#</a></h2>
+<h2>Tahapan Proyek<a class="headerlink" href="#tahapan-proyek" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Import library</p></li>
 <li><p>Load data audio</p></li>
@@ -498,9 +498,7 @@ Dataset terdiri dari 100 file audio <code class="docutils literal notranslate"><
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sounddevice in /usr/local/python/3.12.1/lib/python3.12/site-packages (0.5.3)
 Requirement already satisfied: CFFI&gt;=1.0 in /home/codespace/.local/lib/python3.12/site-packages (from sounddevice) (1.17.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /home/codespace/.local/lib/python3.12/site-packages (from CFFI&gt;=1.0-&gt;sounddevice) (2.22)
+Requirement already satisfied: pycparser in /home/codespace/.local/lib/python3.12/site-packages (from CFFI&gt;=1.0-&gt;sounddevice) (2.22)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.3</span>
@@ -1326,11 +1324,11 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">record_voice</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="mi">22050</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s1">&#39;rekaman.wav&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🎙️ Mulai merekam selama </span><span class="si">{</span><span class="n">duration</span><span class="si">}</span><span class="s2"> detik...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Mulai merekam selama </span><span class="si">{</span><span class="n">duration</span><span class="si">}</span><span class="s2"> detik...&quot;</span><span class="p">)</span>
     <span class="n">audio</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">rec</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">sr</span><span class="p">),</span> <span class="n">samplerate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
     <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
     <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Rekaman disimpan sebagai </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Rekaman disimpan sebagai </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">output_path</span>
 </pre></div>
 </div>
@@ -1346,7 +1344,7 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
     <span class="n">feat_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">feat</span><span class="p">])</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat_scaled</span><span class="p">)</span>
     <span class="n">hasil</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">pred</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔊 Prediksi suara: </span><span class="si">{</span><span class="n">hasil</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Prediksi suara: </span><span class="si">{</span><span class="n">hasil</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hasil</span>
 </pre></div>
 </div>
@@ -1369,7 +1367,7 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🎙️ Mulai merekam selama 3 detik...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Mulai merekam selama 3 detik...
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1381,7 +1379,7 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
 
 <span class="nn">Cell In[7], line 3,</span> in <span class="ni">record_voice</span><span class="nt">(duration, sr, output_path)</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">record_voice</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="mi">22050</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s1">&#39;rekaman.wav&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🎙️ Mulai merekam selama </span><span class="si">{</span><span class="n">duration</span><span class="si">}</span><span class="s2"> detik...&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Mulai merekam selama </span><span class="si">{</span><span class="n">duration</span><span class="si">}</span><span class="s2"> detik...&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">audio</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">rec</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">sr</span><span class="p">),</span> <span class="n">samplerate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
@@ -1448,88 +1446,6 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">soundfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sf</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-
-<span class="n">folders</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;data/buka&#39;</span><span class="p">,</span> <span class="s1">&#39;data/tutup&#39;</span><span class="p">]</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">augment_audio</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="p">):</span>
-    <span class="n">augmented_audios</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># 1️⃣ Pitch shift (ubah nada)</span>
-    <span class="n">n_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">pitch_shift</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">augmented_audios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_pitch</span><span class="p">)</span>
-
-    <span class="c1"># 2️⃣ Time stretch (ubah kecepatan)</span>
-    <span class="n">rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
-    <span class="n">y_stretch</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">time_stretch</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">rate</span><span class="p">)</span>
-    <span class="n">augmented_audios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_stretch</span><span class="p">)</span>
-
-    <span class="c1"># 3️⃣ Tambah noise</span>
-    <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.005</span>
-    <span class="n">y_noise</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">noise</span>
-    <span class="n">augmented_audios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_noise</span><span class="p">)</span>
-
-    <span class="c1"># 4️⃣ Kombinasi pitch + noise</span>
-    <span class="n">y_combo</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">pitch_shift</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
-    <span class="n">y_combo</span> <span class="o">=</span> <span class="n">y_combo</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_combo</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.004</span>
-    <span class="n">augmented_audios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_combo</span><span class="p">)</span>
-
-    <span class="c1"># 5️⃣ Time stretch + pitch</span>
-    <span class="n">y_mix</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">time_stretch</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">))</span>
-    <span class="n">y_mix</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">pitch_shift</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y_mix</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">augmented_audios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_mix</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">augmented_audios</span>
-
-
-<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.wav&#39;</span><span class="p">)]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔊 Memproses folder: </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2"> (total </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span><span class="si">}</span><span class="s2"> file asli)&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
-        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-        <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-
-        <span class="n">aug_audios</span> <span class="o">=</span> <span class="n">augment_audio</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
-
-        <span class="n">base_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">aug</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">aug_audios</span><span class="p">):</span>
-            <span class="n">out_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_name</span><span class="si">}</span><span class="s2">_aug</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">.wav&quot;</span>
-            <span class="n">out_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">out_name</span><span class="p">)</span>
-            <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="n">aug</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Augmentasi selesai! Sekarang setiap folder punya ±100 file suara.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔊 Memproses folder: data/buka (total 20 file asli)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20/20 [00:05&lt;00:00,  3.49it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔊 Memproses folder: data/tutup (total 20 file asli)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20/20 [00:02&lt;00:00,  7.18it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Augmentasi selesai! Sekarang setiap folder punya ±100 file suara.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1588,7 +1504,7 @@ File hasil rekaman disimpan dalam format .wav, lalu diprediksi apakah itu suara 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>VOICE DETECTION</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proyek">🧩 Tahapan Proyek</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proyek">Tahapan Proyek</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>IMPORT LIBRARY</strong></a></li>
