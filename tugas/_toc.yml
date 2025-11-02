@@ -22,3 +22,4 @@ chapters:
       sections:
         - file: Autocorelation_Lag30
         - file: KNN Regression(Revisi)
+- file: suara_detection

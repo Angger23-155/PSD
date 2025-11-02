@@ -25,87 +25,85 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import os
-import librosa
-import soundfile as sf
-import numpy as np
-from tqdm import tqdm
-
-# === Folder dataset asli ===
-folders = ['data/buka', 'data/tutup']
-
-# === Fungsi augmentasi ===
-def augment_audio(y, sr):
-    augmented_audios = []
-
-    # 1️⃣ Pitch shift (ubah nada suara)
-    n_steps = np.random.uniform(-2, 2)  
-    y_pitch = librosa.effects.pitch_shift(y, sr, n_steps)
-    augmented_audios.append(y_pitch)
-
-    # 2️⃣ Time stretch (ubah kecepatan bicara)
-    rate = np.random.uniform(0.9, 1.1)
-    y_stretch = librosa.effects.time_stretch(y, rate)
-    augmented_audios.append(y_stretch)
-
-    # 3️⃣ Tambah noise latar belakang
-    noise = np.random.randn(len(y)) * 0.005
-    y_noise = y + noise
-    augmented_audios.append(y_noise)
-
-    # 4️⃣ Kombinasi pitch + noise
-    y_combo = librosa.effects.pitch_shift(y, sr, np.random.uniform(-1.5, 1.5))
-    y_combo = y_combo + np.random.randn(len(y_combo)) * 0.004
-    augmented_audios.append(y_combo)
-
-    # 5️⃣ Time stretch + pitch
-    y_mix = librosa.effects.time_stretch(y, np.random.uniform(0.95, 1.05))
-    y_mix = librosa.effects.pitch_shift(y_mix, sr, np.random.uniform(-1, 1))
-    augmented_audios.append(y_mix)
-
-    return augmented_audios
-
-# === Loop semua file dan augmentasi ===
-for folder in folders:
-    files = [f for f in os.listdir(folder) if f.endswith('.wav')]
-    print(f"🔊 Memproses folder: {folder} (total {len(files)} file asli)")
-
-    for f in tqdm(files):
-        file_path = os.path.join(folder, f)
-        y, sr = librosa.load(file_path, sr=None)
-
-        # buat 5 variasi per file
-        aug_audios = augment_audio(y, sr)
-
-        # simpan hasil augmentasi
-        base_name = os.path.splitext(f)[0]
-        for i, aug in enumerate(aug_audios):
-            out_name = f"{base_name}_aug{i+1}.wav"
-            out_path = os.path.join(folder, out_name)
-            sf.write(out_path, aug, sr)
-
-print("✅ Augmentasi selesai! Sekarang setiap folder punya ±100 file suara.")
-
+# Rekam dan prediksi suara baru
+rekaman_path = record_voice(duration=3)
+hasil_prediksi = predict_audio(rekaman_path)
 ------------------
 
 ----- stdout -----
-🔊 Memproses folder: data/buka (total 0 file asli)
------ stderr -----
-0it [00:00, ?it/s]
------ stderr -----
-0it [00:00, ?it/s]
------ stderr -----
-
+🎙️ Mulai merekam selama 3 detik...
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mFileNotFoundError[39m                         Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 43[39m
-[32m     41[39m [38;5;66;03m# === Loop semua file dan augmentasi ===[39;00m
-[32m     42[39m [38;5;28;01mfor[39;00m folder [38;5;129;01min[39;00m folders:
-[32m---> [39m[32m43[39m     files = [f [38;5;28;01mfor[39;00m f [38;5;129;01min[39;00m [43mos[49m[43m.[49m[43mlistdir[49m[43m([49m[43mfolder[49m[43m)[49m [38;5;28;01mif[39;00m f.endswith([33m'[39m[33m.wav[39m[33m'[39m)]
-[32m     44[39m     [38;5;28mprint[39m([33mf[39m[33m"[39m[33m🔊 Memproses folder: [39m[38;5;132;01m{[39;00mfolder[38;5;132;01m}[39;00m[33m (total [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(files)[38;5;132;01m}[39;00m[33m file asli)[39m[33m"[39m)
-[32m     46[39m     [38;5;28;01mfor[39;00m f [38;5;129;01min[39;00m tqdm(files):
+[31mPortAudioError[39m                            Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 2[39m
+[32m      1[39m [38;5;66;03m# Rekam dan prediksi suara baru[39;00m
+[32m----> [39m[32m2[39m rekaman_path = [43mrecord_voice[49m[43m([49m[43mduration[49m[43m=[49m[32;43m3[39;49m[43m)[49m
+[32m      3[39m hasil_prediksi = predict_audio(rekaman_path)
 
-[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'data/tutup'
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 3[39m, in [36mrecord_voice[39m[34m(duration, sr, output_path)[39m
+[32m      1[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrecord_voice[39m(duration=[32m3[39m, sr=[32m22050[39m, output_path=[33m'[39m[33mrekaman.wav[39m[33m'[39m):
+[32m      2[39m     [38;5;28mprint[39m([33mf[39m[33m"[39m[33m🎙️ Mulai merekam selama [39m[38;5;132;01m{[39;00mduration[38;5;132;01m}[39;00m[33m detik...[39m[33m"[39m)
+[32m----> [39m[32m3[39m     audio = [43msd[49m[43m.[49m[43mrec[49m[43m([49m[38;5;28;43mint[39;49m[43m([49m[43mduration[49m[43m [49m[43m*[49m[43m [49m[43msr[49m[43m)[49m[43m,[49m[43m [49m[43msamplerate[49m[43m=[49m[43msr[49m[43m,[49m[43m [49m[43mchannels[49m[43m=[49m[32;43m1[39;49m[43m,[49m[43m [49m[43mdtype[49m[43m=[49m[33;43m'[39;49m[33;43mfloat32[39;49m[33;43m'[39;49m[43m)[49m
+[32m      4[39m     sd.wait()
+[32m      5[39m     sf.write(output_path, audio, sr)
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:279[39m, in [36mrec[39m[34m(frames, samplerate, channels, dtype, out, mapping, blocking, **kwargs)[39m
+[32m    276[39m     ctx.read_indata(indata)
+[32m    277[39m     ctx.callback_exit()
+[32m--> [39m[32m279[39m [43mctx[49m[43m.[49m[43mstart_stream[49m[43m([49m[43mInputStream[49m[43m,[49m[43m [49m[43msamplerate[49m[43m,[49m[43m [49m[43mctx[49m[43m.[49m[43minput_channels[49m[43m,[49m
+[32m    280[39m [43m                 [49m[43mctx[49m[43m.[49m[43minput_dtype[49m[43m,[49m[43m [49m[43mcallback[49m[43m,[49m[43m [49m[43mblocking[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    281[39m [38;5;28;01mreturn[39;00m out
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:2653[39m, in [36m_CallbackContext.start_stream[39m[34m(self, StreamClass, samplerate, channels, dtype, callback, blocking, **kwargs)[39m
+[32m   2650[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mstart_stream[39m([38;5;28mself[39m, StreamClass, samplerate, channels, dtype, callback,
+[32m   2651[39m                  blocking, **kwargs):
+[32m   2652[39m     stop()  [38;5;66;03m# Stop previous playback/recording[39;00m
+[32m-> [39m[32m2653[39m     [38;5;28mself[39m.stream = [43mStreamClass[49m[43m([49m[43msamplerate[49m[43m=[49m[43msamplerate[49m[43m,[49m
+[32m   2654[39m [43m                              [49m[43mchannels[49m[43m=[49m[43mchannels[49m[43m,[49m
+[32m   2655[39m [43m                              [49m[43mdtype[49m[43m=[49m[43mdtype[49m[43m,[49m
+[32m   2656[39m [43m                              [49m[43mcallback[49m[43m=[49m[43mcallback[49m[43m,[49m
+[32m   2657[39m [43m                              [49m[43mfinished_callback[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mfinished_callback[49m[43m,[49m
+[32m   2658[39m [43m                              [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2659[39m     [38;5;28mself[39m.stream.start()
+[32m   2660[39m     [38;5;28;01mglobal[39;00m _last_callback
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:1452[39m, in [36mInputStream.__init__[39m[34m(self, samplerate, blocksize, device, channels, dtype, latency, extra_settings, callback, finished_callback, clip_off, dither_off, never_drop_input, prime_output_buffers_using_stream_callback)[39m
+[32m   1420[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__init__[39m([38;5;28mself[39m, samplerate=[38;5;28;01mNone[39;00m, blocksize=[38;5;28;01mNone[39;00m,
+[32m   1421[39m              device=[38;5;28;01mNone[39;00m, channels=[38;5;28;01mNone[39;00m, dtype=[38;5;28;01mNone[39;00m, latency=[38;5;28;01mNone[39;00m,
+[32m   1422[39m              extra_settings=[38;5;28;01mNone[39;00m, callback=[38;5;28;01mNone[39;00m, finished_callback=[38;5;28;01mNone[39;00m,
+[32m   1423[39m              clip_off=[38;5;28;01mNone[39;00m, dither_off=[38;5;28;01mNone[39;00m, never_drop_input=[38;5;28;01mNone[39;00m,
+[32m   1424[39m              prime_output_buffers_using_stream_callback=[38;5;28;01mNone[39;00m):
+[32m   1425[39m [38;5;250m    [39m[33;03m"""PortAudio input stream (using NumPy).[39;00m
+[32m   1426[39m 
+[32m   1427[39m [33;03m    This has the same methods and attributes as `Stream`, except[39;00m
+[32m   (...)[39m[32m   1450[39m 
+[32m   1451[39m [33;03m    """[39;00m
+[32m-> [39m[32m1452[39m     [43m_StreamBase[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mkind[49m[43m=[49m[33;43m'[39;49m[33;43minput[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mwrap_callback[49m[43m=[49m[33;43m'[39;49m[33;43marray[39;49m[33;43m'[39;49m[43m,[49m
+[32m   1453[39m [43m                         [49m[43m*[49m[43m*[49m[43m_remove_self[49m[43m([49m[38;5;28;43mlocals[39;49m[43m([49m[43m)[49m[43m)[49m[43m)[49m
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:828[39m, in [36m_StreamBase.__init__[39m[34m(self, kind, samplerate, blocksize, device, channels, dtype, latency, extra_settings, callback, finished_callback, clip_off, dither_off, never_drop_input, prime_output_buffers_using_stream_callback, userdata, wrap_callback)[39m
+[32m    825[39m         samplerate = isamplerate
+[32m    826[39m [38;5;28;01melse[39;00m:
+[32m    827[39m     parameters, [38;5;28mself[39m._dtype, [38;5;28mself[39m._samplesize, samplerate = \
+[32m--> [39m[32m828[39m         [43m_get_stream_parameters[49m[43m([49m[43mkind[49m[43m,[49m[43m [49m[43mdevice[49m[43m,[49m[43m [49m[43mchannels[49m[43m,[49m[43m [49m[43mdtype[49m[43m,[49m[43m [49m[43mlatency[49m[43m,[49m
+[32m    829[39m [43m                               [49m[43mextra_settings[49m[43m,[49m[43m [49m[43msamplerate[49m[43m)[49m
+[32m    830[39m     [38;5;28mself[39m._device = parameters.device
+[32m    831[39m     [38;5;28mself[39m._channels = parameters.channelCount
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:2735[39m, in [36m_get_stream_parameters[39m[34m(kind, device, channels, dtype, latency, extra_settings, samplerate)[39m
+[32m   2732[39m [38;5;28;01mif[39;00m samplerate [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m   2733[39m     samplerate = default.samplerate
+[32m-> [39m[32m2735[39m info = [43mquery_devices[49m[43m([49m[43mdevice[49m[43m)[49m
+[32m   2736[39m [38;5;28;01mif[39;00m channels [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m   2737[39m     channels = info[[33m'[39m[33mmax_[39m[33m'[39m + kind + [33m'[39m[33m_channels[39m[33m'[39m]
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/site-packages/sounddevice.py:572[39m, in [36mquery_devices[39m[34m(device, kind)[39m
+[32m    570[39m info = _lib.Pa_GetDeviceInfo(device)
+[32m    571[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m info:
+[32m--> [39m[32m572[39m     [38;5;28;01mraise[39;00m PortAudioError([33mf[39m[33m'[39m[33mError querying device [39m[38;5;132;01m{[39;00mdevice[38;5;132;01m}[39;00m[33m'[39m)
+[32m    573[39m [38;5;28;01massert[39;00m info.structVersion == [32m2[39m
+[32m    574[39m name_bytes = _ffi.string(info.name)
+
+[31mPortAudioError[39m: Error querying device -1
 
