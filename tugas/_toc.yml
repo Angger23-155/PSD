@@ -22,4 +22,5 @@ chapters:
       sections:
         - file: Autocorelation_Lag30
         - file: KNN Regression(Revisi)
+    - file: Forecast_NO2_PyCaret_final
 - file: suara_detection
