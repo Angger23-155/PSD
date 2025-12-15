@@ -26,5 +26,5 @@ chapters:
 - file: suara_detection
 - file: CatsDogs
 - file: Data_Understanding_CatsDogs
-- file: preprocessing_CatsDogs
+- file: data_preparation
 - file: modeling
