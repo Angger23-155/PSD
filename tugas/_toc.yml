@@ -27,5 +27,5 @@ chapters:
 - file: CatsDogs
   sections:
     - file: Data_Understanding_CatsDogs
-    - file: Preprocessing_CatsDogs
+    - file: preprocessing_CatsDogs
     - file: modeling
