@@ -24,3 +24,8 @@ chapters:
         - file: KNN Regression(Revisi)
     - file: Forecast_NO2_PyCaret_final
 - file: suara_detection
+- file: CatsDogs
+  sections:
+    - file: Data Understanding
+    - file: Preprocessing CatsDogs
+    - file: modeling
