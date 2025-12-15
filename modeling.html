@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modeling – Time Series Audio Classification &#8212; Proyek Sains Data</title>
+    <title>Modeling &#8212; Proyek Sains Data</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeling';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. Muat dataset" href="data_preparation.html" />
+    <link rel="prev" title="Preprocessing" href="data_preparation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -259,8 +259,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="CatsDogs.html">Klasifikasi CatsDogs Menggunakan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Data_Understanding_CatsDogs.html">BAB II: DATA UNDERSTANDING</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_preparation.html">1. Muat dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Understanding_CatsDogs.html">DATA UNDERSTANDING</a></li>
 
 
 
@@ -268,7 +267,17 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling – Time Series Audio Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_preparation.html">Preprocessing</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling</a></li>
+
 </ul>
 
     </div>
@@ -454,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modeling – Time Series Audio Classification</h1>
+    <h1>Modeling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -464,6 +473,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modeling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-audio-classification">Time Series Audio Classification</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-selectkbest-randomforest">Pipeline SelectKBest + RandomForest</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-path-dan-dataset">Konfigurasi Path dan Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pipeline SelectKBest + RandomForest</a></li>
@@ -472,6 +483,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyimpanan-model-terbaik">Penyimpanan Model Terbaik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-modeling">Kesimpulan Modeling</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -482,8 +496,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="modeling-time-series-audio-classification">
-<h1>Modeling – Time Series Audio Classification<a class="headerlink" href="#modeling-time-series-audio-classification" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="modeling">
+<h1>Modeling<a class="headerlink" href="#modeling" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="time-series-audio-classification">
+<h1>Time Series Audio Classification<a class="headerlink" href="#time-series-audio-classification" title="Link to this heading">#</a></h1>
 <section id="pipeline-selectkbest-randomforest">
 <h2>Pipeline SelectKBest + RandomForest<a class="headerlink" href="#pipeline-selectkbest-randomforest" title="Link to this heading">#</a></h2>
 <p>Tahap ini bertujuan untuk membangun model klasifikasi time series audio
@@ -772,7 +789,7 @@ Model ini dipilih sebagai model final dan digunakan pada tahap deployment.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Muat dataset</p>
+        <p class="prev-next-title">Preprocessing</p>
       </div>
     </a>
 </div>
@@ -791,6 +808,8 @@ Model ini dipilih sebagai model final dan digunakan pada tahap deployment.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modeling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-audio-classification">Time Series Audio Classification</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-selectkbest-randomforest">Pipeline SelectKBest + RandomForest</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-path-dan-dataset">Konfigurasi Path dan Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pipeline SelectKBest + RandomForest</a></li>
@@ -799,6 +818,9 @@ Model ini dipilih sebagai model final dan digunakan pada tahap deployment.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyimpanan-model-terbaik">Penyimpanan Model Terbaik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-modeling">Kesimpulan Modeling</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

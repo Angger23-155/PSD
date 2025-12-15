@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BAB II: DATA UNDERSTANDING &#8212; Proyek Sains Data</title>
+    <title>DATA UNDERSTANDING &#8212; Proyek Sains Data</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Understanding_CatsDogs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Muat dataset" href="data_preparation.html" />
+    <link rel="next" title="Preprocessing" href="data_preparation.html" />
     <link rel="prev" title="Klasifikasi CatsDogs Menggunakan" href="CatsDogs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -260,8 +260,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="CatsDogs.html">Klasifikasi CatsDogs Menggunakan</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">BAB II: DATA UNDERSTANDING</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_preparation.html">1. Muat dataset</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DATA UNDERSTANDING</a></li>
 
 
 
@@ -269,7 +268,17 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="modeling.html">Modeling – Time Series Audio Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_preparation.html">Preprocessing</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="modeling.html">Modeling</a></li>
+
 </ul>
 
     </div>
@@ -455,7 +464,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BAB II: DATA UNDERSTANDING</h1>
+    <h1>DATA UNDERSTANDING</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,47 +474,49 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs">Notebook Eksplorasi dan Analisis Dataset CatsDogs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2.1 SUMBER DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-catsdogs">Dataset CatsDogs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DATA UNDERSTANDING</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs">Notebook Eksplorasi dan Analisis Dataset CatsDogs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2.1 SUMBER DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-catsdogs">Dataset CatsDogs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-dan-karakteristik-data">2.2 JENIS DAN KARAKTERISTIK DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset-lengkap">Informasi Dataset Lengkap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-variabel">2.2 Identifikasi Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.1 Identifikasi Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-kelas-kucing-vs-anjing">2.2.2 Distribusi Kelas - Kucing vs Anjing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-fitur-histogram">2.2.3 Visualisasi Fitur - Histogram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-perbandingan-sinyal-kucing-vs-anjing">2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-perbandingan-distribusi">2.2.4.1 Box Plot Perbandingan Distribusi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-per-kelas">2.2.4.2 Statistik Deskriptif per Kelas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-mean-dan-std-per-kelas">2.2.4.3 Perbandingan Mean dan Std per Kelas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-line-plot-sampel-sinyal-per-kelas">2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asal-usul-dan-proses-perolehan-data">2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologi-perolehan-data-audio">Metodologi Perolehan Data Audio</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-utama">Referensi Utama:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-perolehan-data">Tahapan Proses Perolehan Data:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-audio-yang-dihasilkan">Kualitas Data Audio yang Dihasilkan</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-proses-perolehan-data">2.4 DIAGRAM PROSES PEROLEHAN DATA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-ilmiah-proses-perolehan-data">2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-lengkap">Referensi Lengkap:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-kunci-dari-referensi">Konsep Kunci dari Referensi:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-data-understanding">2.6 KESIMPULAN DATA UNDERSTANDING</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penilaian-kualitas-data">Penilaian Kualitas Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-dan-karakteristik-data">2.2 JENIS DAN KARAKTERISTIK DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset-lengkap">Informasi Dataset Lengkap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-variabel">2.2 Identifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.1 Identifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-kelas-kucing-vs-anjing">2.2.2 Distribusi Kelas - Kucing vs Anjing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-fitur-histogram">2.2.3 Visualisasi Fitur - Histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-perbandingan-sinyal-kucing-vs-anjing">2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-perbandingan-distribusi">2.2.4.1 Box Plot Perbandingan Distribusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-per-kelas">2.2.4.2 Statistik Deskriptif per Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-mean-dan-std-per-kelas">2.2.4.3 Perbandingan Mean dan Std per Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-line-plot-sampel-sinyal-per-kelas">2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#asal-usul-dan-proses-perolehan-data">2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologi-perolehan-data-audio">Metodologi Perolehan Data Audio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-utama">Referensi Utama:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-perolehan-data">Tahapan Proses Perolehan Data:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-audio-yang-dihasilkan">Kualitas Data Audio yang Dihasilkan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-proses-perolehan-data">2.4 DIAGRAM PROSES PEROLEHAN DATA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-ilmiah-proses-perolehan-data">2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-lengkap">Referensi Lengkap:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-kunci-dari-referensi">Konsep Kunci dari Referensi:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-data-understanding">2.6 KESIMPULAN DATA UNDERSTANDING</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penilaian-kualitas-data">Penilaian Kualitas Data</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -516,17 +527,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bab-ii-data-understanding">
-<h1>BAB II: DATA UNDERSTANDING<a class="headerlink" href="#bab-ii-data-understanding" title="Link to this heading">#</a></h1>
-<section id="notebook-eksplorasi-dan-analisis-dataset-catsdogs">
-<h2>Notebook Eksplorasi dan Analisis Dataset CatsDogs<a class="headerlink" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs" title="Link to this heading">#</a></h2>
-<p>Bab ini menjelaskan karakteristik dataset, cara perolehan data, dan analisis komprehensif terhadap sinyal audio kucing dan anjing berdasarkan referensi ilmiah dalam bidang audio classification dan environmental sound recognition.</p>
+  <section id="data-understanding">
+<h1>DATA UNDERSTANDING<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
 </section>
+<section id="notebook-eksplorasi-dan-analisis-dataset-catsdogs">
+<h1>Notebook Eksplorasi dan Analisis Dataset CatsDogs<a class="headerlink" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs" title="Link to this heading">#</a></h1>
+<p>Bab ini menjelaskan karakteristik dataset, cara perolehan data, dan analisis komprehensif terhadap sinyal audio kucing dan anjing berdasarkan referensi ilmiah dalam bidang audio classification dan environmental sound recognition.</p>
 <hr class="docutils" />
+</section>
 <section id="sumber-data">
-<h2>2.1 SUMBER DATA<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h2>
+<h1>2.1 SUMBER DATA<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h1>
 <section id="dataset-catsdogs">
-<h3>Dataset CatsDogs<a class="headerlink" href="#dataset-catsdogs" title="Link to this heading">#</a></h3>
+<h2>Dataset CatsDogs<a class="headerlink" href="#dataset-catsdogs" title="Link to this heading">#</a></h2>
 <p>Dataset yang digunakan dalam proyek ini adalah <strong>CatsDogs</strong>, yang merupakan bagian dari <strong>UCR Time Series Classification Archive</strong>. Dataset ini berisi rekaman audio dari suara kucing dan anjing yang telah dikonversi menjadi sinyal numerik (time series) untuk keperluan klasifikasi.</p>
 <p><strong>Karakteristik Sumber:</strong></p>
 <ul class="simple">
@@ -538,7 +550,7 @@ document.write(`
 </ul>
 </section>
 <section id="load-dataset">
-<h3>Load Dataset<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h3>
+<h2>Load Dataset<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Library</span>
@@ -590,9 +602,9 @@ document.write(`
 </section>
 </section>
 <section id="jenis-dan-karakteristik-data">
-<h2>2.2 JENIS DAN KARAKTERISTIK DATA<a class="headerlink" href="#jenis-dan-karakteristik-data" title="Link to this heading">#</a></h2>
+<h1>2.2 JENIS DAN KARAKTERISTIK DATA<a class="headerlink" href="#jenis-dan-karakteristik-data" title="Link to this heading">#</a></h1>
 <section id="informasi-dataset-lengkap">
-<h3>Informasi Dataset Lengkap<a class="headerlink" href="#informasi-dataset-lengkap" title="Link to this heading">#</a></h3>
+<h2>Informasi Dataset Lengkap<a class="headerlink" href="#informasi-dataset-lengkap" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
@@ -636,7 +648,7 @@ Duplikat Rows: 1
 </div>
 </section>
 <section id="identifikasi-variabel">
-<h3>2.2 Identifikasi Variabel<a class="headerlink" href="#identifikasi-variabel" title="Link to this heading">#</a></h3>
+<h2>2.2 Identifikasi Variabel<a class="headerlink" href="#identifikasi-variabel" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identifikasi Variabel</span>
@@ -673,10 +685,10 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="id1">
-<h3>2.2.1 Identifikasi Variabel<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h2>2.2.1 Identifikasi Variabel<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 </section>
 <section id="distribusi-kelas-kucing-vs-anjing">
-<h3>2.2.2 Distribusi Kelas - Kucing vs Anjing<a class="headerlink" href="#distribusi-kelas-kucing-vs-anjing" title="Link to this heading">#</a></h3>
+<h2>2.2.2 Distribusi Kelas - Kucing vs Anjing<a class="headerlink" href="#distribusi-kelas-kucing-vs-anjing" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi Distribusi Kelas</span>
@@ -719,7 +731,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="visualisasi-fitur-histogram">
-<h3>2.2.3 Visualisasi Fitur - Histogram<a class="headerlink" href="#visualisasi-fitur-histogram" title="Link to this heading">#</a></h3>
+<h2>2.2.3 Visualisasi Fitur - Histogram<a class="headerlink" href="#visualisasi-fitur-histogram" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram - Limit 8 fitur pertama</span>
@@ -748,9 +760,9 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="analisis-perbandingan-sinyal-kucing-vs-anjing">
-<h3>2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing<a class="headerlink" href="#analisis-perbandingan-sinyal-kucing-vs-anjing" title="Link to this heading">#</a></h3>
+<h2>2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing<a class="headerlink" href="#analisis-perbandingan-sinyal-kucing-vs-anjing" title="Link to this heading">#</a></h2>
 <section id="box-plot-perbandingan-distribusi">
-<h4>2.2.4.1 Box Plot Perbandingan Distribusi<a class="headerlink" href="#box-plot-perbandingan-distribusi" title="Link to this heading">#</a></h4>
+<h3>2.2.4.1 Box Plot Perbandingan Distribusi<a class="headerlink" href="#box-plot-perbandingan-distribusi" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Box Plot Perbandingan Kucing vs Anjing</span>
@@ -798,7 +810,7 @@ PERBANDINGAN DISTRIBUSI SINYAL: KUCING vs ANJING
 </div>
 </section>
 <section id="statistik-deskriptif-per-kelas">
-<h4>2.2.4.2 Statistik Deskriptif per Kelas<a class="headerlink" href="#statistik-deskriptif-per-kelas" title="Link to this heading">#</a></h4>
+<h3>2.2.4.2 Statistik Deskriptif per Kelas<a class="headerlink" href="#statistik-deskriptif-per-kelas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Statistik Deskriptif per Kelas</span>
@@ -850,7 +862,7 @@ max     0.0515   0.0302   0.0236   0.0310
 </div>
 </section>
 <section id="perbandingan-mean-dan-std-per-kelas">
-<h4>2.2.4.3 Perbandingan Mean dan Std per Kelas<a class="headerlink" href="#perbandingan-mean-dan-std-per-kelas" title="Link to this heading">#</a></h4>
+<h3>2.2.4.3 Perbandingan Mean dan Std per Kelas<a class="headerlink" href="#perbandingan-mean-dan-std-per-kelas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabel Perbandingan Mean dan Std</span>
@@ -886,7 +898,7 @@ att4   -0.0067   0.0467   -0.0026   0.0166
 </div>
 </section>
 <section id="visualisasi-line-plot-sampel-sinyal-per-kelas">
-<h4>2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas<a class="headerlink" href="#visualisasi-line-plot-sampel-sinyal-per-kelas" title="Link to this heading">#</a></h4>
+<h3>2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas<a class="headerlink" href="#visualisasi-line-plot-sampel-sinyal-per-kelas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Line Plot - Sampel Sinyal per Kelas - DIPERBAIKI UNTUK SCALAR DATA</span>
@@ -973,24 +985,24 @@ ANJING (Dog):
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
 <hr class="docutils" />
+</section>
+</section>
+</section>
 <section id="asal-usul-dan-proses-perolehan-data">
-<h2>2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA<a class="headerlink" href="#asal-usul-dan-proses-perolehan-data" title="Link to this heading">#</a></h2>
+<h1>2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA<a class="headerlink" href="#asal-usul-dan-proses-perolehan-data" title="Link to this heading">#</a></h1>
 <section id="metodologi-perolehan-data-audio">
-<h3>Metodologi Perolehan Data Audio<a class="headerlink" href="#metodologi-perolehan-data-audio" title="Link to this heading">#</a></h3>
+<h2>Metodologi Perolehan Data Audio<a class="headerlink" href="#metodologi-perolehan-data-audio" title="Link to this heading">#</a></h2>
 <p>Proses perolehan dan representasi data audio pada dataset ini mengikuti metodologi yang dijelaskan dalam penelitian berikut:</p>
 <section id="referensi-utama">
-<h4>Referensi Utama:<a class="headerlink" href="#referensi-utama" title="Link to this heading">#</a></h4>
+<h3>Referensi Utama:<a class="headerlink" href="#referensi-utama" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Piczak, K. J. (2015).</strong> ESC: Dataset for Environmental Sound Classification. Proceedings of the ACM International Conference on Multimedia.</p></li>
 <li><p><strong>Salamon, J., Jacoby, C., &amp; Bello, J. P. (2014).</strong> A Dataset and Taxonomy for Urban Sound Research. Proceedings of the ACM International Conference on Multimedia.</p></li>
 </ol>
 </section>
 <section id="tahapan-proses-perolehan-data">
-<h4>Tahapan Proses Perolehan Data:<a class="headerlink" href="#tahapan-proses-perolehan-data" title="Link to this heading">#</a></h4>
+<h3>Tahapan Proses Perolehan Data:<a class="headerlink" href="#tahapan-proses-perolehan-data" title="Link to this heading">#</a></h3>
 <p>Berdasarkan referensi ilmiah tersebut, proses perolehan data audio melalui tahapan berikut:</p>
 <p><strong>1. Perekaman Audio (Recording)</strong></p>
 <ul class="simple">
@@ -1041,7 +1053,7 @@ ANJING (Dog):
 </section>
 </section>
 <section id="kualitas-data-audio-yang-dihasilkan">
-<h3>Kualitas Data Audio yang Dihasilkan<a class="headerlink" href="#kualitas-data-audio-yang-dihasilkan" title="Link to this heading">#</a></h3>
+<h2>Kualitas Data Audio yang Dihasilkan<a class="headerlink" href="#kualitas-data-audio-yang-dihasilkan" title="Link to this heading">#</a></h2>
 <p>Dari penerapan metodologi di atas, dataset yang dihasilkan memiliki karakteristik berikut:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1078,11 +1090,11 @@ ANJING (Dog):
 </tbody>
 </table>
 </div>
-</section>
-</section>
 <hr class="docutils" />
+</section>
+</section>
 <section id="diagram-proses-perolehan-data">
-<h2>2.4 DIAGRAM PROSES PEROLEHAN DATA<a class="headerlink" href="#diagram-proses-perolehan-data" title="Link to this heading">#</a></h2>
+<h1>2.4 DIAGRAM PROSES PEROLEHAN DATA<a class="headerlink" href="#diagram-proses-perolehan-data" title="Link to this heading">#</a></h1>
 <p>Berikut adalah alur diagram tahapan perolehan dan transformasi data audio menjadi dataset numerik:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────┐
 │  Audio Recording    │  Perekaman audio kucing dan anjing
@@ -1130,13 +1142,13 @@ ANJING (Dog):
 <li><p><strong>Representation Stage:</strong> Organisasi fitur menjadi time series untuk machine learning</p></li>
 <li><p><strong>Final Dataset:</strong> Format siap pakai untuk training dan evaluasi model</p></li>
 </ul>
-</section>
 <hr class="docutils" />
+</section>
 <section id="referensi-ilmiah-proses-perolehan-data">
-<h2>2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA<a class="headerlink" href="#referensi-ilmiah-proses-perolehan-data" title="Link to this heading">#</a></h2>
+<h1>2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA<a class="headerlink" href="#referensi-ilmiah-proses-perolehan-data" title="Link to this heading">#</a></h1>
 <p>Proses perolehan dan representasi data audio yang dijelaskan di atas berpedoman pada penelitian-penelitian berikut:</p>
 <section id="referensi-lengkap">
-<h3>Referensi Lengkap:<a class="headerlink" href="#referensi-lengkap" title="Link to this heading">#</a></h3>
+<h2>Referensi Lengkap:<a class="headerlink" href="#referensi-lengkap" title="Link to this heading">#</a></h2>
 <p><strong>[1] Piczak, K. J. (2015).</strong> ESC: Dataset for Environmental Sound Classification. <em>Proceedings of the ACM International Conference on Multimedia</em>. <a class="reference external" href="http://www.karolpiczak.com/esc-dataset/">Link</a></p>
 <ul class="simple">
 <li><p>Menjelaskan metodologi komprehensif untuk recording, preprocessing, dan feature extraction dari audio environmental</p></li>
@@ -1152,20 +1164,20 @@ ANJING (Dog):
 </ul>
 </section>
 <section id="konsep-kunci-dari-referensi">
-<h3>Konsep Kunci dari Referensi:<a class="headerlink" href="#konsep-kunci-dari-referensi" title="Link to this heading">#</a></h3>
+<h2>Konsep Kunci dari Referensi:<a class="headerlink" href="#konsep-kunci-dari-referensi" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Audio Time Series Representation:</strong> Fitur akustik direpresentasikan sebagai time series yang menangkap evolusi temporal dari karakteristik sinyal</p></li>
 <li><p><strong>Feature Engineering:</strong> MFCC dan fitur spektral lainnya dipilih karena relevansinya dengan human auditory perception</p></li>
 <li><p><strong>Standardisasi Preprocessing:</strong> Pipeline preprocessing yang konsisten memastikan kualitas dan comparability dataset</p></li>
 <li><p><strong>Dataset Balance:</strong> Strategi stratifikasi dan balanced sampling untuk menghindari bias dalam training</p></li>
 </ol>
-</section>
-</section>
 <hr class="docutils" />
+</section>
+</section>
 <section id="kesimpulan-data-understanding">
-<h2>2.6 KESIMPULAN DATA UNDERSTANDING<a class="headerlink" href="#kesimpulan-data-understanding" title="Link to this heading">#</a></h2>
+<h1>2.6 KESIMPULAN DATA UNDERSTANDING<a class="headerlink" href="#kesimpulan-data-understanding" title="Link to this heading">#</a></h1>
 <section id="penilaian-kualitas-data">
-<h3>Penilaian Kualitas Data<a class="headerlink" href="#penilaian-kualitas-data" title="Link to this heading">#</a></h3>
+<h2>Penilaian Kualitas Data<a class="headerlink" href="#penilaian-kualitas-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
@@ -1366,7 +1378,6 @@ RINGKASAN BAB II: DATA UNDERSTANDING
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1412,7 +1423,7 @@ RINGKASAN BAB II: DATA UNDERSTANDING
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Muat dataset</p>
+        <p class="prev-next-title">Preprocessing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1432,47 +1443,49 @@ RINGKASAN BAB II: DATA UNDERSTANDING
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs">Notebook Eksplorasi dan Analisis Dataset CatsDogs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2.1 SUMBER DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-catsdogs">Dataset CatsDogs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DATA UNDERSTANDING</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-eksplorasi-dan-analisis-dataset-catsdogs">Notebook Eksplorasi dan Analisis Dataset CatsDogs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2.1 SUMBER DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-catsdogs">Dataset CatsDogs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-dan-karakteristik-data">2.2 JENIS DAN KARAKTERISTIK DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset-lengkap">Informasi Dataset Lengkap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-variabel">2.2 Identifikasi Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.1 Identifikasi Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-kelas-kucing-vs-anjing">2.2.2 Distribusi Kelas - Kucing vs Anjing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-fitur-histogram">2.2.3 Visualisasi Fitur - Histogram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-perbandingan-sinyal-kucing-vs-anjing">2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-perbandingan-distribusi">2.2.4.1 Box Plot Perbandingan Distribusi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-per-kelas">2.2.4.2 Statistik Deskriptif per Kelas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-mean-dan-std-per-kelas">2.2.4.3 Perbandingan Mean dan Std per Kelas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-line-plot-sampel-sinyal-per-kelas">2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asal-usul-dan-proses-perolehan-data">2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologi-perolehan-data-audio">Metodologi Perolehan Data Audio</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-utama">Referensi Utama:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-perolehan-data">Tahapan Proses Perolehan Data:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-audio-yang-dihasilkan">Kualitas Data Audio yang Dihasilkan</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-proses-perolehan-data">2.4 DIAGRAM PROSES PEROLEHAN DATA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-ilmiah-proses-perolehan-data">2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-lengkap">Referensi Lengkap:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-kunci-dari-referensi">Konsep Kunci dari Referensi:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-data-understanding">2.6 KESIMPULAN DATA UNDERSTANDING</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penilaian-kualitas-data">Penilaian Kualitas Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-dan-karakteristik-data">2.2 JENIS DAN KARAKTERISTIK DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset-lengkap">Informasi Dataset Lengkap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-variabel">2.2 Identifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.1 Identifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-kelas-kucing-vs-anjing">2.2.2 Distribusi Kelas - Kucing vs Anjing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-fitur-histogram">2.2.3 Visualisasi Fitur - Histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-perbandingan-sinyal-kucing-vs-anjing">2.2.4 Analisis Perbandingan Sinyal Kucing vs Anjing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-perbandingan-distribusi">2.2.4.1 Box Plot Perbandingan Distribusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-per-kelas">2.2.4.2 Statistik Deskriptif per Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-mean-dan-std-per-kelas">2.2.4.3 Perbandingan Mean dan Std per Kelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-line-plot-sampel-sinyal-per-kelas">2.2.4.4 Visualisasi Line Plot - Sampel Sinyal per Kelas</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#asal-usul-dan-proses-perolehan-data">2.3 ASAL-USUL DAN PROSES PEROLEHAN DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologi-perolehan-data-audio">Metodologi Perolehan Data Audio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-utama">Referensi Utama:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-perolehan-data">Tahapan Proses Perolehan Data:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data-audio-yang-dihasilkan">Kualitas Data Audio yang Dihasilkan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-proses-perolehan-data">2.4 DIAGRAM PROSES PEROLEHAN DATA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-ilmiah-proses-perolehan-data">2.5 REFERENSI ILMIAH PROSES PEROLEHAN DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-lengkap">Referensi Lengkap:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-kunci-dari-referensi">Konsep Kunci dari Referensi:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-data-understanding">2.6 KESIMPULAN DATA UNDERSTANDING</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penilaian-kualitas-data">Penilaian Kualitas Data</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
