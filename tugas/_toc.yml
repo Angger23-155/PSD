@@ -25,7 +25,6 @@ chapters:
     - file: Forecast_NO2_PyCaret_final
 - file: suara_detection
 - file: CatsDogs
-  sections:
-    - file: Data_Understanding_CatsDogs
-    - file: preprocessing_CatsDogs
-    - file: modeling
+- file: Data_Understanding_CatsDogs
+- file: preprocessing_CatsDogs
+- file: modeling
